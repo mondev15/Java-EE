@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Friends of Mine</title>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+<h2>Détail d'un utilisateur</h2>
+<form class="w3-container" th:object="${utilisateur}" th:action="@{/utilisateur}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <p>
+        <label>Nom :</label>
+        <input class="w3-input" type="text" style="width:50%" th:field="*{nom}" />Nom</p>
+    <p class="w3-large w3-text-red" >size must be between 1 and</p>
+    <p>
+        <label>Prénom : </label>
+        <input class="w3-input" type="text" style="width:50%" th:field="*{prenom}"/>Prénom</p>
+    <p class="w3-large w3-text-red" >size must be between 1 and</p>
+    <p>
+        <label>Sexe :</label>
+        <input class="w3-radio" type="radio" name="sexe" value="M" checked="true"  th:field="*{sexe}" />
+        <label class="w3-validate">M</label>
+
+        <input class="w3-radio" type="radio" name="sexe" value="F"  th:field="*{sexe}" />
+        <label class="w3-validate">F</label></p>
+    <p>
+        <label>Email :</label>
+        <input class="w3-input" type="text" style="width:50%" th:field= "*{email}"/>Email</p>
+    <p class="w3-large w3-text-red" >not a well-formed email address</p>
+    <button class="w3-button">Envoyer</button>
+</form>
+</body>
+</html>

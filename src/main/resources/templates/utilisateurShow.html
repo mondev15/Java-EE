@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head lang="en">
+    <title>Friends of Mine</title>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+
+<body>
+<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+<h2>Détail de l'utilisateur</h2>
+
+<div class="w3-cell-row">
+    <div class="w3-container w3-cell" style="width:20%">
+        <p>Id :</p>
+    </div>
+    <div class="w3-container w3-cell">
+        <p  class="form-control-static" th:text="${utilisateur.id}"></p>
+    </div>
+</div>
+<div class="w3-cell-row">
+    <div class="w3-container w3-cell" style="width:20%">
+        <p>Nom :</p>
+    </div>
+        <div class="w3-container w3-cell">
+            <p class="form-control-static" th:text="${utilisateur.nom}" ></p>
+    </div>
+</div>
+<div class="w3-cell-row">
+    <div class="w3-container w3-cell" style="width:20%">
+        <p>Prénom :</p>
+    </div>
+    <div class="w3-container w3-cell">
+        <p class="form-control-static" th:text="${utilisateur.prenom}" ></p>
+    </div>
+</div>
+<div class="w3-cell-row">
+    <div class="w3-container w3-cell" style="width:20%">
+        <p>Sexe :</p>
+    </div>
+    <div class="w3-container w3-cell">
+        <p  class="form-control-static" th:text="${utilisateur.sexe}" ></p>
+    </div>
+</div>
+<div class="w3-cell-row">
+    <div class="w3-container w3-cell" style="width:20%">
+        <p>Email :</p>
+    </div>
+    <div class="w3-container w3-cell">
+        <p  class="form-control-static" th:text="${utilisateur.email}" ></p>
+    </div>
+</div>
+<div class="w3-cell-row">
+    <div class="w3-container w3-cell" style="width:20%">
+        <p>Liste des activités avec responsabilité :</p>
+    </div>
+    <div class="w3-container w3-cell">
+        <p  class="form-control-static" th:each="activite : ${utilisateur.activites}" th:text="${activite}" ></p>
+
+    </div>
+</div>
+
+</body>
+</html>

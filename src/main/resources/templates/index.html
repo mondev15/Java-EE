@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Friends of Mine</title>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+
+<body>
+<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+<h1>Bienvenue !</h1>
+
+<p>Que voulez-vous faire ?</p>
+<ol>
+    <li><a href="activites.html" th:href="@{/activites}">Consulter la liste des activités</a></li>
+    <li><a href="utilisateurs.html" th:href="@{/utilisateurs}">Consulter la liste des utilisateurs</a></li>
+    <li><a href="utilisateursForm.html" th:href="@{/utilisateur/new}">Créer un nouvel utilisateur</a></li>
+</ol>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Activités</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h2>Liste des Activites</h2>
+<table border="1">
+    <tr bgcolor="#9acd32">
+        <th>Titre </th>
+        <th>Descriptif</th>
+    </tr>
+
+    <tr th:each="activite : ${activites}">
+        <td th:text="${activite.titre}"/>
+        <td th:text="${activite.descriptif}"/>
+    </tr>
+</table>
+</body>
+</html>

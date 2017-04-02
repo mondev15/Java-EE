@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Friends of Mine</title>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+
+<body>
+<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+<h2>Liste des Utilisateurs</h2>
+<table class="w3-table-all w3-hoverable">
+    <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+        <th>Date de naissance</th>
+        <th>Sexe</th>
+        <p>Impossible. L&#39;utilisateur est responsable d&#39;activités</p>
+    </tr>
+    <tr th:each="utilisateur : ${utilisateurs}">
+        <td th:text="${utilisateur.id}"></td>
+        <td th:text="${utilisateur.nom}"></td>
+        <td th:text="${utilisateur.prenom}"></td>
+        <td th:text="${utilisateur.email}"></td>
+        <td th:text="${utilisateur.dateNaissance}"></td>
+        <td th:text="${utilisateur.sexe}"></td>
+        <td><form th:method="get" th:action="${ '/utilisateur/' + utilisateur.id}">
+            <button class="w3-button w3-black" type="submit">Voir</button>
+        </form></td>
+        <td><form th:method="get" th:action="${'/utilisateur/edit/' + utilisateur.id}">
+            <button class="w3-button w3-black" type="submit">Editer</button>
+        </form></td>
+        <td><form th:method="delete" th:action="${'/utilisateur/delete/' + utilisateur.id}">
+            <button class="w3-button w3-black" type="submit">Suppression</button>
+        </form></td>
+    </tr>
+</table>
+
+</body>
+</html>
